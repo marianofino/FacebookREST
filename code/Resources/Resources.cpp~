@@ -1,0 +1,38 @@
+#include "../ClientServer/client_https.hpp"
+
+using namespace SimpleWeb;
+
+class Resource {
+  public:
+    explicit Resource() {}
+    explicit Resource(std::string method, std::string token = "") : _method(method), _token(token)
+    {
+    }
+
+   // static Client<HTTPS> client = new Client<HTTPS>("graph.facebook.com", false);
+
+    std::string getResponse(std::ostream&, std::shared_ptr<ServerBase<socket_type>::Request>) {
+      std::string response;
+
+      if (_method == "GET") {
+        display(response);
+      } else if (_method == "POST") {
+        create(response);
+      } else if (_method == "PUT") {
+        update(response);
+      } else if (_method == "DELETE") {
+        remove(response);
+      }
+
+      return response;
+    }
+
+  private:
+    std::string _method;
+    std::string _token;
+
+    virtual void display(std::string &response) {};
+    virtual void create(std::string &response) {};
+    virtual void update(std::string &response) {};
+    virtual void remove(std::string &response) {};
+};

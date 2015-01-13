@@ -1,0 +1,12 @@
+#include "../ClientServer/client_https.hpp"
+
+using namespace SimpleWeb;
+
+class Dispatcher {
+  public:
+    std::map< std::string, std::vector<std::string> connectors;
+
+    void assign(std::string url, std::string resource) {
+      connectors.push_back(url, resource);
+    }
+};
