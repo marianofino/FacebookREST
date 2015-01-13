@@ -10,8 +10,8 @@
 #include "client_https.hpp"
 
 const std::string kApiVersion = "v2.2";
-const std::string kAppId = "353672178148808";
-const std::string kAppSecret = "544ea588f6d395612793511220f87c70";
+const std::string kAppId = "xxx";
+const std::string kAppSecret = "xxx";
 
 namespace SimpleWeb {
 
@@ -57,6 +57,9 @@ namespace SimpleWeb {
 
                 response << "HTTP/1.1 200 OK\r\nContent-Length: " << content.length() << "\r\n\r\n" << content;;
             }
+
+        protected:
+            Client<HTTPS> * client;
 
         private:
             virtual void display(std::string &content) {};

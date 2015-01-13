@@ -10,8 +10,8 @@
 #include "client_https.hpp"
 
 const std::string kApiVersion = "v2.2";
-const std::string kAppId = "353672178148808";
-const std::string kAppSecret = "544ea588f6d395612793511220f87c70";
+const std::string kAppId = "xxx"; // Replace here
+const std::string kAppSecret = "xxx"; // Replace here
 
 namespace SimpleWeb {
 
